@@ -97,7 +97,7 @@ extension FlickrPhotoViewController : UICollectionViewDataSource {
 
 extension FlickrPhotoViewController : UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+        self.searches.removeAll(keepCapacity: Bool())
         //Will be called when user press enter in text field
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
        collectionView!.addSubview(activityIndicator)            //adding activity indicator on collection view
