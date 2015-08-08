@@ -8,31 +8,21 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+//let reuseIdentifier = "FlickrCell"
 
 class FlickrPhotoViewController: UICollectionViewController {
-
-  //  private let reuseIdentifier = "FlickrCell"
-  //  private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    private let reuseIdentifier = "FlickrCell"
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    
+    private var searches = [FlickrSearchResults]()
+    private let flickr = Flickr()
+    
+    func photoForIndexPath(indexPath: NSIndexPath) -> FlickrPhoto {
+        return searches[indexPath.section].searchResults[indexPath.row]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
+}  
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -75,12 +65,40 @@ class FlickrPhotoViewController: UICollectionViewController {
     }
     */
 
+
+
+extension FlickrPhotoViewController : UICollectionViewDataSource {
+    
+    //number of sections is the count of the searches array
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return searches.count
+    }
+    
+    //number of items in a section is the count of the searchResults array
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return searches[section].searchResults.count
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! FlickrPhotoCell
+        //This will call photoForIndexPath with indexPath for each photo found
+        let flickrPhoto = photoForIndexPath(indexPath)
+        cell.backgroundColor = UIColor.blackColor()
+        
+        cell.imageView.image = flickrPhoto.thumbnail
+        //Populating the imageView with photos fetched
+        return cell
+    
+    }
 }
-private var searches = [FlickrSearchResults]()
-private let flickr = Flickr()
+
 
 extension FlickrPhotoViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {    //Will be called when user press enter in text field
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        //Will be called when user press enter in text field
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
        collectionView!.addSubview(activityIndicator)            //adding activity indicator on collection view
        activityIndicator.frame = collectionView!.bounds
@@ -93,9 +111,28 @@ extension FlickrPhotoViewController : UITextFieldDelegate {
             }
             if results != nil {                         //Printing the count of number of images found
                 println("Found \(results!.searchResults.count) matching \(results!.searchTerm)")
-
+                self.searches.insert(results!, atIndex: 0)
+                  self.collectionView?.reloadData()
             }
         }
         return true
     }
 }
+
+
+extension FlickrPhotoViewController : UICollectionViewDelegateFlowLayout {
+    //It is for managing layout
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let flickrPhoto =  photoForIndexPath(indexPath)
+        return CGSize(width: 100, height: 100)
+ 
+    }
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
+}
+
