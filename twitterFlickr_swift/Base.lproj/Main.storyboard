@@ -139,11 +139,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-c1-fes">
-                                <rect key="frame" x="173" y="173" width="254" height="254"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-c1-fes">
+                                <rect key="frame" x="173" y="154" width="254" height="254"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="O5X-6R-UMB"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-du-eX4">
-                                <rect key="frame" x="266" y="435" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-du-eX4">
+                                <rect key="frame" x="277" y="416" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="a74-1h-gpP"/>
+                                </constraints>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -153,9 +159,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1pT-c1-fes" firstAttribute="centerX" secondItem="hfm-du-eX4" secondAttribute="centerX" id="5Pj-iF-bet"/>
+                            <constraint firstItem="Ozf-LK-rco" firstAttribute="top" secondItem="hfm-du-eX4" secondAttribute="bottom" constant="105" id="IRU-3T-2BU"/>
+                            <constraint firstItem="hfm-du-eX4" firstAttribute="top" secondItem="1pT-c1-fes" secondAttribute="bottom" constant="8" symbolic="YES" id="fB5-yv-q4u"/>
+                            <constraint firstItem="1pT-c1-fes" firstAttribute="centerX" secondItem="7cV-cl-90P" secondAttribute="centerX" id="g1m-d6-kcJ"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="1pT-c1-fes" id="1bG-g8-fcW"/>
+                        <outlet property="imageView" destination="1pT-c1-fes" id="MBM-tE-FBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrE-a5-X3x" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -22,11 +22,6 @@ class FlickrPhotoViewController: UICollectionViewController {
         return searches[indexPath.section].searchResults[indexPath.row]
     }
 
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    var nextVC: DetailViewController = segue.destinationViewController as! DetailViewController
-        
-    
-}
 }
 
 //extension FlickrPhotoViewController : UIViewController{
@@ -101,6 +96,17 @@ extension FlickrPhotoViewController : UICollectionViewDataSource {
         return cell
     
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var indexPaths : NSArray = collectionView!.indexPathsForSelectedItems()
+        var img : DetailViewController = segue.destinationViewController as! DetailViewController
+        var thisPath : NSIndexPath = indexPaths[0] as! NSIndexPath
+        
+        let flickrPhoto = photoForIndexPath(thisPath) as FlickrPhoto
+        
+        img.imageElement=flickrPhoto.thumbnail!
+     }
+
 }
 
 

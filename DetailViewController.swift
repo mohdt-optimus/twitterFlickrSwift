@@ -9,20 +9,25 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+   
+    @IBOutlet var imageView: UIImageView!
+    var imageElement : UIImage = UIImage()
     
-    
-    @IBAction func saveButton(sender: AnyObject) {
-    }
-    var collect : FlickrPhoto
-    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageView.image=collect.thumbnail;
-        
-        // Do any additional setup after loading the view.
+        imageView.image=imageElement
     }
-
+    @IBAction func saveButton(sender: AnyObject) {
+        
+        var saveImg : UIImage = imageView.image!
+        UIImageWriteToSavedPhotosAlbum(saveImg, nil, nil, nil)
+        var msgView = UIAlertView()
+        msgView.title="Message"
+        msgView.message="Photo Saved Successfully"
+        msgView.addButtonWithTitle("OK")
+        msgView.show()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
