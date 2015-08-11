@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -70,7 +71,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="izi-BZ-M8E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XJs-7b-ob4">
                             <size key="itemSize" width="160" height="155"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -85,14 +86,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Ru-NAR">
-                                            <rect key="frame" x="14" y="21" width="124" height="117"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Ru-NAR">
+                                            <rect key="frame" x="8" y="8" width="144" height="139"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="trailing" secondItem="YOl-em-5vL" secondAttribute="trailingMargin" id="HJu-zi-Kl7"/>
+                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="bottom" secondItem="YOl-em-5vL" secondAttribute="bottomMargin" id="Sp6-RH-gdc"/>
+                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="leading" secondItem="YOl-em-5vL" secondAttribute="leadingMargin" id="iil-ZX-fAX"/>
+                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="top" secondItem="YOl-em-5vL" secondAttribute="topMargin" id="l2N-ul-Vi0"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="YfS-Ru-NAR" id="4Bc-Bp-kDB"/>
+                                    <segue destination="C9N-Qv-VgS" kind="show" identifier="imageClicked" id="VPI-9x-lRb"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -116,7 +125,42 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIz-Se-95p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="666"/>
+            <point key="canvasLocation" x="830" y="660"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="qD7-O8-YGR">
+            <objects>
+                <viewController id="C9N-Qv-VgS" customClass="DetailViewController" customModule="twitterFlickr_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c65-9k-Zl1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ozf-LK-rco"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7cV-cl-90P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-c1-fes">
+                                <rect key="frame" x="173" y="173" width="254" height="254"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-du-eX4">
+                                <rect key="frame" x="266" y="435" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="C9N-Qv-VgS" eventType="touchUpInside" id="AGk-Ga-zfl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="1pT-c1-fes" id="1bG-g8-fcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrE-a5-X3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="666"/>
         </scene>
         <!--Item-->
         <scene sceneID="AeP-oz-ep4">

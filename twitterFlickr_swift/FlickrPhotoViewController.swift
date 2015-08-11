@@ -21,7 +21,16 @@ class FlickrPhotoViewController: UICollectionViewController {
     func photoForIndexPath(indexPath: NSIndexPath) -> FlickrPhoto {
         return searches[indexPath.section].searchResults[indexPath.row]
     }
-}  
+
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    var nextVC: DetailViewController = segue.destinationViewController as! DetailViewController
+        
+    
+}
+}
+
+//extension FlickrPhotoViewController : UIViewController{
+//   //}
         /*
     // MARK: - Navigation
 
@@ -99,7 +108,7 @@ extension FlickrPhotoViewController : UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.searches.removeAll(keepCapacity: Bool())
         //Will be called when user press enter in text field
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
        collectionView!.addSubview(activityIndicator)            //adding activity indicator on collection view
        activityIndicator.frame = collectionView!.bounds
        activityIndicator.startAnimating()               //starting animation of activity indicator
@@ -117,6 +126,7 @@ extension FlickrPhotoViewController : UITextFieldDelegate {
         }
         return true
     }
+    
 }
 
 
@@ -136,3 +146,14 @@ extension FlickrPhotoViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
+//
+//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"imageClicked"])
+//    {
+//        NSArray *indexPaths=[self.collectionView indexPathsForSelectedItems];
+//        flickrImageClick *imageSelected=segue.destinationViewController;
+//        NSIndexPath *path=[indexPaths objectAtIndex:0];
+//        imageSelected.collect=[self.searchResults objectAtIndex:path.row];
+//    }
+//}
