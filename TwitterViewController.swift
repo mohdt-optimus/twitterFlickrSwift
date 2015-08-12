@@ -26,6 +26,7 @@ class TwitterViewController: UIViewController, UITableViewDataSource, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweetArray.count
     }
@@ -33,16 +34,19 @@ class TwitterViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         let cell = self.tweetTable.dequeueReusableCellWithIdentifier("Cell")
-            as! UITableViewCell
+            as! TwitterTableViewCell
+        
         let row = indexPath.row
+        
         let tweet = self.tweetArray[row] as! NSDictionary
-      //  let userinfo = tweet.objectForKey("user") as! NSDictionary
+        let userinfo = tweet.objectForKey("user") as! NSDictionary
         
-        cell.textLabel!.text = tweet.objectForKey("text") as? String
-        //cell.tweetTitle.text = userinfo.objectForKey("name") as? String
-        //cell..text=tweet.objectForKey("user") as? String
-        cell.textLabel!.numberOfLines=0
-        
+        cell.tweetData!.text = tweet.objectForKey("text") as? String
+        cell.tweetTitle!.text = userinfo.objectForKey("name") as? String
+        var imageInfo : NSString = (userinfo.objectForKey("profile_image_url") as? String)!
+        let url = NSURL(string: imageInfo as String)
+        let data = NSData(contentsOfURL: url!) 
+        cell.tweetImage.image = UIImage(data: data!)
         return cell
     }
     func showTweet(){
@@ -63,7 +67,7 @@ class TwitterViewController: UIViewController, UITableViewDataSource, UITableVie
                         let requestURL = NSURL(string:
                             "https://api.twitter.com/1.1/statuses/user_timeline.json")
                         
-                        let parameters = ["include_entities" : "1","count" : "40"]
+                        let parameters = ["include_entities":"1","count" : "40"]
                         
                         let postRequest = SLRequest(forServiceType:
                             SLServiceTypeTwitter,
