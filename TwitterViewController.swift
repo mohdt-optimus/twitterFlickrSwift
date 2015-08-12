@@ -11,13 +11,15 @@ import Social
 import Accounts
 
 class TwitterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     @IBOutlet weak var tweetTable: UITableView!
     var tweetArray = [AnyObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.showTweet()
+//        tweetTable.estimatedRowHeight = 200
+//        tweetTable.rowHeight = UITableViewAutomaticDimension
+//        
         
         // Do any additional setup after loading the view.
     }
@@ -32,7 +34,7 @@ class TwitterViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
+        activityIndicator.removeFromSuperview()
         let cell = self.tweetTable.dequeueReusableCellWithIdentifier("Cell")
             as! TwitterTableViewCell
         
@@ -51,7 +53,14 @@ class TwitterViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     func showTweet(){
         
-        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        var screenWidth = screenSize.width
+        var screenHeight = screenSize.height
+        tweetTable!.addSubview(activityIndicator)            //adding activity indicator on collection view
+        activityIndicator.frame = tweetTable!.bounds
+        activityIndicator.center.x = screenWidth/2
+        activityIndicator.center.y = screenHeight/2
+          activityIndicator.startAnimating()
         let account = ACAccountStore()
         let accountType = account.accountTypeWithAccountTypeIdentifier(
             ACAccountTypeIdentifierTwitter)

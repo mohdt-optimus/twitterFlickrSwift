@@ -2,47 +2,46 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Twitter View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="TwitterViewController" customModule="twitterFlickr_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="Mg3-XP-46r"/>
+                        <viewControllerLayoutGuide type="bottom" id="po3-fe-clU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kCE-Z6-67a">
-                                <rect key="frame" x="0.0" y="42" width="600" height="509"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kCE-Z6-67a">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="112" id="qEu-Vx-hoT" customClass="TwitterTableViewCell" customModule="twitterFlickr_swift" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="117" id="qEu-Vx-hoT" customClass="TwitterTableViewCell" customModule="twitterFlickr_swift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEu-Vx-hoT" id="hDp-Bl-MIS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3j-Zd-wG0">
-                                                    <rect key="frame" x="18" y="8" width="98" height="97"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3j-Zd-wG0">
+                                                    <rect key="frame" x="8" y="8" width="94" height="99"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrD-si-ZaD">
-                                                    <rect key="frame" x="137" y="8" width="455" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ga-sW-5nQ">
-                                                    <rect key="frame" x="129" y="39" width="463" height="77"/>
+                                                    <rect key="frame" x="110" y="36" width="490" height="66"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrD-si-ZaD">
+                                                    <rect key="frame" x="110" y="8" width="490" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -60,14 +59,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="fp5-4V-jSh"/>
                     <connections>
                         <outlet property="tweetTable" destination="kCE-Z6-67a" id="Tpg-we-k8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="0.0"/>
+            <point key="canvasLocation" x="1600" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -80,7 +79,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="ILG-kt-0wq" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="Ms2-79-yXt" kind="relationship" relationship="viewControllers" id="dk1-Nk-JsE"/>
                     </connections>
                 </tabBarController>
@@ -104,25 +103,19 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="YOl-em-5vL" customClass="FlickrPhotoCell" customModule="twitterFlickr_swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="80" y="64" width="160" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Ru-NAR">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Ru-NAR">
                                             <rect key="frame" x="8" y="8" width="144" height="139"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="trailing" secondItem="YOl-em-5vL" secondAttribute="trailingMargin" id="HJu-zi-Kl7"/>
-                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="bottom" secondItem="YOl-em-5vL" secondAttribute="bottomMargin" id="Sp6-RH-gdc"/>
-                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="leading" secondItem="YOl-em-5vL" secondAttribute="leadingMargin" id="iil-ZX-fAX"/>
-                                    <constraint firstItem="YfS-Ru-NAR" firstAttribute="top" secondItem="YOl-em-5vL" secondAttribute="topMargin" id="l2N-ul-Vi0"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="YfS-Ru-NAR" id="4Bc-Bp-kDB"/>
                                     <segue destination="C9N-Qv-VgS" kind="show" identifier="imageClicked" id="VPI-9x-lRb"/>
@@ -149,31 +142,25 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIz-Se-95p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="660"/>
+            <point key="canvasLocation" x="830" y="659.99999999999989"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="qD7-O8-YGR">
             <objects>
                 <viewController id="C9N-Qv-VgS" customClass="DetailViewController" customModule="twitterFlickr_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c65-9k-Zl1"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ozf-LK-rco"/>
+                        <viewControllerLayoutGuide type="top" id="RHs-PK-kFW"/>
+                        <viewControllerLayoutGuide type="bottom" id="KQC-hU-8JN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7cV-cl-90P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-c1-fes">
-                                <rect key="frame" x="173" y="154" width="254" height="254"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="254" id="O5X-6R-UMB"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-c1-fes">
+                                <rect key="frame" x="33" y="154" width="254" height="222"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-du-eX4">
-                                <rect key="frame" x="277" y="416" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="a74-1h-gpP"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-du-eX4">
+                                <rect key="frame" x="137" y="384" width="46" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -183,13 +170,8 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1pT-c1-fes" firstAttribute="centerX" secondItem="hfm-du-eX4" secondAttribute="centerX" id="5Pj-iF-bet"/>
-                            <constraint firstItem="Ozf-LK-rco" firstAttribute="top" secondItem="hfm-du-eX4" secondAttribute="bottom" constant="105" id="IRU-3T-2BU"/>
-                            <constraint firstItem="hfm-du-eX4" firstAttribute="top" secondItem="1pT-c1-fes" secondAttribute="bottom" constant="8" symbolic="YES" id="fB5-yv-q4u"/>
-                            <constraint firstItem="1pT-c1-fes" firstAttribute="centerX" secondItem="7cV-cl-90P" secondAttribute="centerX" id="g1m-d6-kcJ"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bbY-ug-7nD"/>
                     <connections>
                         <outlet property="imageView" destination="1pT-c1-fes" id="MBM-tE-FBR"/>
                     </connections>
@@ -215,7 +197,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-u1-7Lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="825"/>
+            <point key="canvasLocation" x="11" y="824.99999999999989"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="K3Y-4a-Rk4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILG-kt-0wq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tWp-UE-hWL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="0Hd-1V-mR9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ll-1j-SAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="0.0"/>
         </scene>
     </scenes>
     <resources>
