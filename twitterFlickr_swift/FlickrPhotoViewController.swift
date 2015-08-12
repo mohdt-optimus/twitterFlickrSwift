@@ -152,14 +152,4 @@ extension FlickrPhotoViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-//
-//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"imageClicked"])
-//    {
-//        NSArray *indexPaths=[self.collectionView indexPathsForSelectedItems];
-//        flickrImageClick *imageSelected=segue.destinationViewController;
-//        NSIndexPath *path=[indexPaths objectAtIndex:0];
-//        imageSelected.collect=[self.searchResults objectAtIndex:path.row];
-//    }
-//}
+

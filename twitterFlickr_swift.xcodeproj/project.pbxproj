@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		DB5B7DE61B72456C006D3359 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B7DE51B72456C006D3359 /* AppDelegate.swift */; };
-		DB5B7DE81B72456C006D3359 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B7DE71B72456C006D3359 /* FirstViewController.swift */; };
 		DB5B7DED1B72456C006D3359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B7DEB1B72456C006D3359 /* Main.storyboard */; };
 		DB5B7DEF1B72456C006D3359 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5B7DEE1B72456C006D3359 /* Images.xcassets */; };
 		DB5B7DF21B72456C006D3359 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5B7DF01B72456C006D3359 /* LaunchScreen.xib */; };
 		DB5B7DFE1B72456C006D3359 /* twitterFlickr_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B7DFD1B72456C006D3359 /* twitterFlickr_swiftTests.swift */; };
 		DB5B7E081B7245B5006D3359 /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B7E071B7245B5006D3359 /* FlickrSearcher.swift */; };
 		DB5B7E0A1B7245C5006D3359 /* FlickrPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B7E091B7245C5006D3359 /* FlickrPhotoViewController.swift */; };
+		DBBBF8001B7B03D600B5263C /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBF7FF1B7B03D600B5263C /* TwitterViewController.swift */; };
+		DBBBF8021B7B040A00B5263C /* TwitterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBF8011B7B040A00B5263C /* TwitterTableViewCell.swift */; };
+		DBBBF8041B7B080100B5263C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBBF8031B7B080100B5263C /* Social.framework */; };
+		DBBBF8061B7B080700B5263C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBBF8051B7B080700B5263C /* Twitter.framework */; };
 		DBCE5A811B760795005DF8DA /* FlickrPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE5A801B760795005DF8DA /* FlickrPhotoCell.swift */; };
 		DBCE5A851B76380C005DF8DA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE5A841B76380C005DF8DA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +36,6 @@
 		DB5B7DE01B72456C006D3359 /* twitterFlickr_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterFlickr_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B7DE41B72456C006D3359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5B7DE51B72456C006D3359 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB5B7DE71B72456C006D3359 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		DB5B7DEC1B72456C006D3359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB5B7DEE1B72456C006D3359 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB5B7DF11B72456C006D3359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +44,10 @@
 		DB5B7DFD1B72456C006D3359 /* twitterFlickr_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twitterFlickr_swiftTests.swift; sourceTree = "<group>"; };
 		DB5B7E071B7245B5006D3359 /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrSearcher.swift; path = twitterFlickr_swift/FlickrSearcher.swift; sourceTree = "<group>"; };
 		DB5B7E091B7245C5006D3359 /* FlickrPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrPhotoViewController.swift; path = twitterFlickr_swift/FlickrPhotoViewController.swift; sourceTree = "<group>"; };
+		DBBBF7FF1B7B03D600B5263C /* TwitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
+		DBBBF8011B7B040A00B5263C /* TwitterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterTableViewCell.swift; sourceTree = "<group>"; };
+		DBBBF8031B7B080100B5263C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DBBBF8051B7B080700B5263C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		DBCE5A801B760795005DF8DA /* FlickrPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrPhotoCell.swift; sourceTree = "<group>"; };
 		DBCE5A841B76380C005DF8DA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBBF8061B7B080700B5263C /* Twitter.framework in Frameworks */,
+				DBBBF8041B7B080100B5263C /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,10 +75,12 @@
 		DB5B7DD71B72456C006D3359 = {
 			isa = PBXGroup;
 			children = (
+				DBBBF7FE1B7B02C100B5263C /* Twitter */,
 				DBE65DCC1B74CE9000E0CA33 /* Flickr */,
 				DB5B7DE21B72456C006D3359 /* twitterFlickr_swift */,
 				DB5B7DFA1B72456C006D3359 /* twitterFlickr_swiftTests */,
 				DB5B7DE11B72456C006D3359 /* Products */,
+				DBBBF8071B7B080E00B5263C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				DB5B7DE51B72456C006D3359 /* AppDelegate.swift */,
-				DB5B7DE71B72456C006D3359 /* FirstViewController.swift */,
 				DB5B7DEB1B72456C006D3359 /* Main.storyboard */,
 				DB5B7DEE1B72456C006D3359 /* Images.xcassets */,
 				DB5B7DF01B72456C006D3359 /* LaunchScreen.xib */,
@@ -119,6 +128,24 @@
 				DB5B7DFC1B72456C006D3359 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBBBF7FE1B7B02C100B5263C /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				DBBBF7FF1B7B03D600B5263C /* TwitterViewController.swift */,
+				DBBBF8011B7B040A00B5263C /* TwitterTableViewCell.swift */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		DBBBF8071B7B080E00B5263C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBBBF8051B7B080700B5263C /* Twitter.framework */,
+				DBBBF8031B7B080100B5263C /* Social.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DBE65DCC1B74CE9000E0CA33 /* Flickr */ = {
@@ -232,8 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBBF8001B7B03D600B5263C /* TwitterViewController.swift in Sources */,
+				DBBBF8021B7B040A00B5263C /* TwitterTableViewCell.swift in Sources */,
 				DB5B7DE61B72456C006D3359 /* AppDelegate.swift in Sources */,
-				DB5B7DE81B72456C006D3359 /* FirstViewController.swift in Sources */,
 				DBCE5A811B760795005DF8DA /* FlickrPhotoCell.swift in Sources */,
 				DBCE5A851B76380C005DF8DA /* DetailViewController.swift in Sources */,
 				DB5B7E0A1B7245C5006D3359 /* FlickrPhotoViewController.swift in Sources */,
